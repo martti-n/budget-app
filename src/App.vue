@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <Budget />
+    <Budget :expenses="expenses"/>
     <AddExpense @add-expense="addExpense"/>
     <Expenses :expenses="expenses" @del-expense="deleteExpense"/>
   </div>
 </template>
 
 <script>
-import Budget from './components/layout/Budget';
+import Budget from './components/Budget';
 import Expenses from './components/Expenses';
 import AddExpense from './components/AddExpense'
 export default {

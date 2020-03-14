@@ -5,7 +5,7 @@
                 {{expense.title}}
             </div>
             <div class="col-2">
-                -{{expense.value}}€
+                - {{expense.value}}€
                 <button @click="$emit('del-expense', expense.id)" class="del">x</button>
             </div>        
         </div>
