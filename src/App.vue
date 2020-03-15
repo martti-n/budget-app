@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <Budget :expenses="expenses"/>
+  <div class="app" :class="mode">
+    <Budget :expenses="expenses" :mode="mode" @toggle="toggle"/>
     <AddExpense @add-expense="addExpense"/>
     <Expenses :expenses="expenses" @del-expense="deleteExpense"/>
   </div>
@@ -19,6 +19,7 @@ export default {
   },
   data() {
     return {
+      mode: 'light',
       expenses: []
     }
   },
@@ -28,6 +29,13 @@ export default {
     },
     addExpense(newExpense) {
       this.expenses = [...this.expenses, newExpense];
+    },
+    toggle() {
+      if(this.mode === 'dark') {
+        this.mode = 'light';
+      } else {
+        this.mode = 'dark'
+      }
     }
 
   }
@@ -39,22 +47,49 @@ export default {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-      }
-      body {
         font-family: Arial, Helvetica, sans-serif;
         line-height: 1.4;
-        background: #333;
+      }
+      
+      .app {
+        background: #15202b;
+        color: #f3f3f3;
+        width: 100vw;
+        min-height: 100vh;
+        transition: background 0.3s ease-in-out;
+
       }
       .btn {
         display: inline-block;
         border: none;
-        background: #555;
-        color: #fff;
+        background: #192938;
+        border: 1px solid #f3f3f3;
         padding: 7px 20px;
         cursor: pointer;
+        color: #f3f3f3;
+        transition: background 0.2s;
       }
 
       .btn:hover {
-        background: #666;
-      }  
+        background: #1f2e3d;
+      }
+    
+      .light {
+        background-color: #f3f3f3;
+        color: black;
+      }
+
+      .light .btn {
+        background: #f3f3f3;
+        border: 1px solid black;
+        color: black;
+        transition: background 0.2s color 0.2s;
+      }
+
+      .light .btn:hover {
+        background: #e9e8e8;
+        color: black;
+      }
+
+
 </style>

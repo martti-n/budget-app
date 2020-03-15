@@ -16,53 +16,79 @@
 <script>
 export default {
     name: "ExpenseItem",
-    props: ["expense"],
+    props: ["expense", "mode"],
     
 }
 </script>
-<style scoped>
-    
 
+<style scoped>
     .expense-item {
         padding: 10px;
         font-weight: 400;
-        background-color: rgb(70, 70, 70);
+        background-color: #192734;
         color: #fff;
         width: 75%;
         margin: 0 auto;
-        border-bottom: 1px solid rgb(80, 80, 80);
+        border: 1px solid #15202b;
         transition: background 0.2s
-    }
+      }
 
-    .expense-item:hover {
-        background: rgb(90, 89, 89);
-    }
+      .expense-item:hover {
+          background: #1f2e3d;
+      }
 
-    .row {
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-    }
+      .light .expense-item {
+    
+          background-color: #f3f3f3;
+          border: 0.3px solid black;
+          color: black;
+          transition: background 0.2s;
+      }
 
-    .col-1 {
-        width: 55%;
-    }
-    .col-2 {
-        width: 45%;
-        float: right;
-    }
+      .light .expense-item:hover {
+          background-color: #e9e8e8;
+      }
 
-    .del {
-        background: #333;
-        color: #fff;
-        border: none;
-        padding: 5px 9px;
-        border-radius: 50%;
-        cursor: pointer;
-        float: right;
-        transition: background 0.2s;
-    }
-    .del:hover {
-        background: #e76262;
-    }
+      .row {
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+      }
+
+      .col-1 {
+          width: 55%;
+         
+      }
+      .col-2 {
+          width: 45%;
+          float: right;
+          
+      }
+
+      .del {
+          background: #15202b;
+          color: #fff;
+          border: none;
+          padding: 5px 9px;
+          border-radius: 50%;
+          cursor: pointer;
+          float: right;
+          transition: background 0.2s;
+      }
+      .del:hover {
+          background: #e76262;
+      }
+
+      .light .del {
+          background: #f3f3f3;
+          color: black;
+          border-radius: 49%;
+          border: black solid 1px;
+          transition: background 0.2s color 0.2s;
+      }
+
+      .light .del:hover {
+          background: black;
+          color: #f3f3f3;
+      }
 </style>

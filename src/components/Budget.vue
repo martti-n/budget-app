@@ -1,20 +1,24 @@
 <template>
     <div class="budget">
+        <Toggle :mode="mode" @toggle="$emit('toggle')"/>
         <p>How much can i spend?</p>
-        <input type="number" placeholder="Enter your budget" v-model="budget">
+        <input type="number" step="0.01" placeholder="Enter your budget" v-model="budget">
         <h1>{{remaining}}€</h1>
     </div>
 </template>
 <script>
-
+import Toggle from './Toggle.vue'
 
 export default {
-    props: ['expenses'],
+    props: ['expenses', 'mode'],
     name: "budget",
     data() {
         return {
             budget:''
         }
+    },
+    components: {
+        Toggle
     },
     computed: {
         remaining() {
@@ -30,30 +34,38 @@ export default {
 
             return remaining;
         }
-    }
     
+        
+    }
+
+
+
 }
+    
+
 </script>
 
 <style scoped>
     .budget {
-        background: #333;
         color: #fff;
         text-align: center;
         padding: 10px;
-    }
+      }
     .budget p {
         font-size: 30px;
         margin-bottom: 10px;
-    }
+        margin-right: 60px;
+      }
 
     input {
         text-align: center;
-    }
+      }
     h1 {
         font-weight: 300;
         font-size: 50px;
-    }
+      }
 
-    
+    .light .budget {
+        color: black;
+      }
 </style>
