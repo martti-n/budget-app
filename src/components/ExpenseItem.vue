@@ -29,7 +29,7 @@ export default {
         color: #fff;
         width: 75%;
         margin: 0 auto;
-        border: 1px solid #15202b;
+        border-bottom: 1px solid #15202b;
         transition: background 0.2s
       }
 
@@ -40,7 +40,8 @@ export default {
       .light .expense-item {
     
           background-color: #f3f3f3;
-          border: 0.3px solid black;
+          border: 0.2px solid rgb(119, 118, 118);
+          border-top: none;
           color: black;
           transition: background 0.2s;
       }
@@ -56,13 +57,17 @@ export default {
       }
 
       .col-1 {
+          display: flex;
+          align-items: center;
           width: 55%;
          
       }
       .col-2 {
           width: 45%;
           float: right;
-          
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
       }
 
       .del {

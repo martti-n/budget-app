@@ -81,7 +81,7 @@ export default {
 
       .light .btn {
         background: #f3f3f3;
-        border: 1px solid black;
+        border: 1px solid  rgb(119, 118, 118);
         color: black;
         transition: background 0.2s color 0.2s;
       }
