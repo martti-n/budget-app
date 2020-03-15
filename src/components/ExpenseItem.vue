@@ -6,7 +6,7 @@
             </div>
             <div class="col-2">
                 - {{expense.value}}€
-                <button @click="$emit('del-expense', expense.id)" class="del">x</button>
+                <button @click="$emit('del-expense', expense.id)" class="del"></button>
             </div>        
         </div>
              
@@ -73,8 +73,8 @@ export default {
       .del {
           background: #15202b;
           color: #fff;
-          border: none;
-          padding: 5px 9px;
+          border: 1px solid rgb(73, 72, 72);
+          padding:10px 10px;
           border-radius: 50%;
           cursor: pointer;
           float: right;
@@ -93,7 +93,7 @@ export default {
       }
 
       .light .del:hover {
-          background: black;
+          background: #e76262;
           color: #f3f3f3;
       }
 </style>

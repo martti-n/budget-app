@@ -47,8 +47,9 @@ export default {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: 'Roboto', sans-serif;
         line-height: 1.4;
+        font-weight: 400;
       }
       
       .app {
