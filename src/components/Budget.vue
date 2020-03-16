@@ -17,6 +17,14 @@ export default {
             budget:''
         }
     },
+    mounted() {
+        this.budget = JSON.parse(localStorage.budget);
+    },
+    watch: {
+        budget(newBudget) {
+            localStorage.budget = JSON.stringify(newBudget);
+        }
+    },
     components: {
         Toggle
     },
@@ -25,7 +33,7 @@ export default {
 
             let remaining = parseFloat(this.budget);
             this.expenses.forEach( expense => {
-                remaining -= parseFloat(expense.value);
+                remaining -= expense.value;
             })
             
             if (isNaN(remaining) == true) {
@@ -35,10 +43,7 @@ export default {
             return remaining;
         }
     
-        
     }
-
-
 
 }
     

@@ -23,6 +23,20 @@ export default {
       expenses: []
     }
   },
+  mounted() {
+    if(localStorage.expenses) {
+      this.expenses = JSON.parse(localStorage.expenses);
+    }
+    this.mode = JSON.parse(localStorage.mode);
+  },
+  watch: {
+    expenses(newExpenses) {
+      localStorage.expenses = JSON.stringify(newExpenses);
+    },
+    mode(newMode){
+      localStorage.mode = JSON.stringify(newMode);
+    }
+  },
   methods: {
     deleteExpense(id) {
       this.expenses = this.expenses.filter(expense => expense.id !== id);
