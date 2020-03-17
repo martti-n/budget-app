@@ -79,11 +79,11 @@ export default {
           border-radius: 50%;
           cursor: pointer;
           float: right;
-          transition: background 0.2s opacity 0.2s;
+          transition: background 0.2s;
       }
       .del:hover {
           background: #e76262;
-          opacity: 1;
+        
       }
 
       .light .del {
