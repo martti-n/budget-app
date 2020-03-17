@@ -74,7 +74,7 @@ export default {
           background: #15202b;
           color: #fff;
           border: 1px solid rgb(73, 72, 72);
-          padding:4px 6px;
+          padding:3px 6px;
           opacity: 0.7;
           border-radius: 50%;
           cursor: pointer;
