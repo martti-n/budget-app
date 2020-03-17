@@ -40,7 +40,7 @@ export default {
                 return 0
             }
 
-            return remaining;
+            return remaining.toFixed(2);
         }
     
     }
@@ -73,4 +73,14 @@ export default {
     .light .budget {
         color: black;
       }
+
+    @media only screen and (max-width: 516px) {
+        .budget p {
+            font-size: 20px;
+        }
+
+        h1 {
+            font-size: 30px;
+        }
+    }
 </style>

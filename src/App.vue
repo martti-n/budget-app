@@ -39,7 +39,11 @@ export default {
   },
   methods: {
     deleteExpense(id) {
-      this.expenses = this.expenses.filter(expense => expense.id !== id);
+      let vm = this;
+      if (confirm("Are you sure?")) {
+        vm.expenses = vm.expenses.filter(expense => expense.id !== id);
+      }
+      
     },
     addExpense(newExpense) {
       this.expenses = [...this.expenses, newExpense];
