@@ -6,7 +6,7 @@
             </div>
             <div class="col-2">
                 - {{expense.value}}€
-                <button @click="$emit('del-expense', expense.id)" class="del"></button>
+                <button @click="$emit('del-expense', expense.id)" class="del"><i class="fas fa-trash-alt"></i></button>
             </div>        
         </div>
              
@@ -74,14 +74,16 @@ export default {
           background: #15202b;
           color: #fff;
           border: 1px solid rgb(73, 72, 72);
-          padding:10px 10px;
+          padding:4px 6px;
+          opacity: 0.7;
           border-radius: 50%;
           cursor: pointer;
           float: right;
-          transition: background 0.2s;
+          transition: background 0.2s opacity 0.2s;
       }
       .del:hover {
           background: #e76262;
+          opacity: 1;
       }
 
       .light .del {
